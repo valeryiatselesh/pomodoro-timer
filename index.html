@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+   <title>Pomodoro - Manage your time</title>
+</head>
+
+<body>
+   <div class="wrapper">
+      <div class="container">
+         <header class="header">
+            <div class="header__container">
+               <div class="header__logo">Let’s DO</div>
+               <div class="header__menu">
+                  <div class="main__reload">
+                     <button id="buttonReload" class="reload"><img src="img/icons/reload.svg" alt=""></button>
+                  </div>
+                  <button id="buttonModal" class="button__menu">Settings</button>
+               </div>
+            </div>
+         </header>
+         <main class="main">
+            <div class="main__container">
+               <div class="main__timer">
+                  <div class="tabcontainer">
+                     <div class="tabheader">
+                        <div class="tabheader__items">
+                           <div class="tabheader__item tabheader__item_active">Pomodoro</div>
+                           <div class="tabheader__item">Short break</div>
+                           <div class="tabheader__item">Long break</div>
+                        </div>
+                     </div>
+                     <div class="tabcontents">
+                        <div class="tabcontent">
+                           <div class="tabcontent__timer">
+                              <div class="timer pomodoro">
+                                 <div class="timer__block">
+                                    <div id="timeLeft">25:00</div>
+                                 </div>
+                              </div>
+                              <div class="tabcontent__btn">
+                                 <button id="buttonPlay" class="btn__timer btn__pomodoro">Start</button>
+                                 <button class="btn__skip skip__timer"></button>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="tabcontent">
+                           <div class="tabcontent__timer">
+                              <div class="timer short">
+                                 <div class="timer__block">
+                                    <div id="timeLeftBreak">5:00</div>
+                                 </div>
+                              </div>
+                              <div class="tabcontent__btn">
+                                 <button id="buttonBreak" class="btn__timer btn__short">Start</button>
+                                 <button class="btn__skip skip__break"></button>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="tabcontent">
+                           <div class="tabcontent__timer">
+                              <div class="timer long">
+                                 <div class="timer__block">
+                                    <div id="timeLeftBreakLong" class="timeleft">15:00</div>
+                                 </div>
+                              </div>
+                              <div class="tabcontent__btn">
+                                 <button id="buttonBreakLong" class="btn__timer btn__long">Start</button>
+                                 <button id="buttonSkipBreakLong" class="btn__skip skip__long"></button>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="main__task">
+                  <div class="task__header">
+                     <div class="task__title">Tasks</div>
+                  </div>
+                  <div id="taskContainer" class="task__container">
+                     <input type="text" id="task" placeholder="Write task" class="task__write">
+                     <button id="addTask" class="add__task">Add +</button>
+                  </div>
+                  <div id="tasksContainer" class="tasks__container">
+                     <ul id="tasksList" class="tasks__list">
+                        <li><span class="task__content"><input type="checkbox" class="task__checkbox"><span
+                                 class="task__text">Design the home page of the site</span></span><button
+                              id="deleteTask" class="delete__task"><img class="task__icon"
+                                 src="img/icons/delete_task.svg" alt=""></button></li>
+                        <li><span class="task__content"><input type="checkbox" class="task__checkbox"><span
+                                 class="task__text">Have a call with a project manager</span></span><button id="deleteTask"
+                              class="delete__task"><img class="task__icon" src="img/icons/delete_task.svg"
+                                 alt=""></button></li>
+                     </ul>
+                  </div>
+                  <div id="buttons" class="task__buttons">
+                     <button id="clearAllTasks" class="button__task clear">Clear All</button>
+                     <button id="saveAllTasks" class="button__task save">Save</button>
+                  </div>
+               </div>
+            </div>
+         </main>
+         <footer class="footer"></footer>
+         <div id="modal" class="modal">
+            <div class="modal__dialog">
+               <div class="modal__content">
+                  <div class="modal__close">
+                     <button id="buttonModalClose" class="close__button"><img src="img/icons/modal_close.svg"
+                           alt=""></button>
+                  </div>
+                  <div class="modal__title">Settings</div>
+                  <div class="modal__subtitle">Timer settings</div>
+                  <div class="modal__items">
+                     <div class="modal__item">
+                        <div class="item__title">Pomodoro</div>
+                        <div class="item__content">
+                           <div id="pomodoroValue" class="item__value">25</div>
+                           <div class="item__buttons">
+                              <div class="item__increment">
+                                 <button id="pomodoroIncrement" class="button__incrdecr button__increment"><img
+                                       src="img/icons/increment.svg" alt=""></button>
+                              </div>
+                              <div class="item__decrement">
+                                 <button id="pomodoroDecrement" class="button__incrdecr button__decrement"><img
+                                       src="img/icons/decrement.svg" alt=""></button>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="modal__item">
+                        <div class="item__title">Short break</div>
+                        <div class="item__content">
+                           <div id="shortBreakValue" class="item__value">5</div>
+                           <div class="item__buttons">
+                              <div class="item__increment">
+                                 <button id="breakIncrement" class="button__incrdecr button__increment"><img
+                                       src="img/icons/increment.svg" alt=""></button>
+                              </div>
+                              <div class="item__decrement">
+                                 <button id="breakDecrement" class="button__incrdecr button__decrement"><img
+                                       src="img/icons/decrement.svg" alt=""></button>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="modal__item">
+                        <div class="item__title">Long break</div>
+                        <div class="item__content">
+                           <div id="longBreakValue" class="item__value">15</div>
+                           <div class="item__buttons">
+                              <div class="item__increment">
+                                 <button id="breakLongIncrement" class="button__incrdecr button__increment"><img
+                                       src="img/icons/increment.svg" alt=""></button>
+                              </div>
+                              <div class="item__decrement">
+                                 <button id="breakLongDecrement" class="button__incrdecr button__decrement"><img
+                                       src="img/icons/decrement.svg" alt=""></button>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="modal__button">
+                     <button id="buttonModalSave" class="button__save">Save</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <script src="js/script.js"></script>
+</body>
+
+</html>
